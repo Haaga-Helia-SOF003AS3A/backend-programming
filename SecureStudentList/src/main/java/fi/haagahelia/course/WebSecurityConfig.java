@@ -1,8 +1,5 @@
 package fi.haagahelia.course;
 
-//import static method antMatcher
-import static org.springframework.security.web.util.matcher.AntPathRequestMatcher.antMatcher;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +26,7 @@ public class WebSecurityConfig {
 	public SecurityFilterChain configure(HttpSecurity http) throws Exception {
 		http
 			.authorizeHttpRequests(authorize -> authorize
-				.requestMatchers(antMatcher("/css/**")).permitAll() // Enable css when logged out
+				.requestMatchers("/css/**").permitAll() // Enable css when logged out
 				.anyRequest().authenticated()
 			).formLogin(formlogin -> formlogin
 				.defaultSuccessUrl("/studentlist", true).permitAll()

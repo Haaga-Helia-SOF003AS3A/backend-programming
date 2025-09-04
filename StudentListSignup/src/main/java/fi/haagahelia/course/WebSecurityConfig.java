@@ -1,8 +1,5 @@
 package fi.haagahelia.course;
 
-//import static method antMatcher
-import static org.springframework.security.web.util.matcher.AntPathRequestMatcher.antMatcher;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -30,15 +27,10 @@ public class WebSecurityConfig  {
 		
 		http
 		.authorizeHttpRequests(authorize -> authorize
-				.requestMatchers(antMatcher("/css/**")).permitAll()
-				.requestMatchers(antMatcher("/signup")).permitAll()
-				.requestMatchers(antMatcher("/saveuser")).permitAll()
+				.requestMatchers("/css/**").permitAll()
+				.requestMatchers("/signup").permitAll()
+				.requestMatchers("/saveuser").permitAll()
 				.anyRequest().authenticated()
-		)
-		.headers(headers -> headers
-				.frameOptions(frameoptions -> 
-				frameoptions.disable() //for h2 console			
-			    )
 		)
 		.formLogin(formlogin -> formlogin
 				.loginPage("/login")
