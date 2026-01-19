@@ -19,6 +19,36 @@
             "projectName": "helloFormValidation",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-StudentListApplication<StudentList>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "fi.haagahelia.course.StudentListApplication",
+            "projectName": "StudentList",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-StudentListApplication<StudentListCrud>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "fi.haagahelia.course.StudentListApplication",
+            "projectName": "StudentListCrud",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-StudentListApplication<StudentListOneToMany>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "fi.haagahelia.course.StudentListApplication",
+            "projectName": "StudentListOneToMany",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
