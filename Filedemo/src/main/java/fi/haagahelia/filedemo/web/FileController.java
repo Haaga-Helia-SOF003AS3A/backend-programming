@@ -27,7 +27,7 @@ public class FileController {
     @PostMapping("/upload")
     public String fileUpload(@RequestParam("file") MultipartFile file, Model model) {
         if (file.isEmpty()) {
-        	model.addAttribute("msg", "Upload failed");
+        	model.addAttribute("msg", "Please select a file to upload");
             return "uploadstatus";
         }
 
@@ -37,7 +37,7 @@ public class FileController {
             Files.write(path, bytes);
         	model.addAttribute("msg", "File " + file.getOriginalFilename() + " uploaded");
         } catch (IOException e) {
-            e.printStackTrace();
+            model.addAttribute("msg", "Upload failed: " + e.getMessage());
         }
 
         return "uploadstatus";
