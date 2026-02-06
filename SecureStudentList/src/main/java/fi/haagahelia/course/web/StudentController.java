@@ -3,7 +3,6 @@ package fi.haagahelia.course.web;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,11 +16,9 @@ import fi.haagahelia.course.domain.StudentRepository;
 
 @Controller
 public class StudentController {
-	//@Autowired
-	private StudentRepository repository; 
 
-	// @Autowired
-	private DepartmentRepository drepository; 
+	private final StudentRepository repository; 
+	private final DepartmentRepository drepository; 
 	
 	// Constructor Injection
 	public StudentController(StudentRepository studentRepository, 

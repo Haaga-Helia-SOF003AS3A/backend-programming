@@ -40,7 +40,7 @@ public class WebSecurityConfig {
 	public UserDetailsService userDetailsService() {
 		
 		System.out.println("in-memory users - luodaan näitä kaksi kappaletta");
-		List<UserDetails> users = new ArrayList<UserDetails>();
+		List<UserDetails> users = new ArrayList<>();
 
 		PasswordEncoder passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
 
