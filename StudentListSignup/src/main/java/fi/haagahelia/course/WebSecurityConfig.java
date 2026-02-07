@@ -13,8 +13,8 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableMethodSecurity(securedEnabled = true)
 public class WebSecurityConfig  {
-	//@Autowired
-	private UserDetailsService userDetailsService; // interface type
+	
+	private final UserDetailsService userDetailsService; // interface type
 	
 	// Constructor injection
 	public WebSecurityConfig(UserDetailsService userDetailsService) {
