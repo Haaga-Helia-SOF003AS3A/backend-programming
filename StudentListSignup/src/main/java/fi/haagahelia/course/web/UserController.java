@@ -1,6 +1,5 @@
 package fi.haagahelia.course.web;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,17 +8,15 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-
-import jakarta.validation.*;
-
-import fi.haagahelia.course.domain.SignupForm;
 import fi.haagahelia.course.domain.AppUser;
 import fi.haagahelia.course.domain.AppUserRepository;
+import fi.haagahelia.course.domain.SignupForm;
+import jakarta.validation.Valid;
 
 @Controller
 public class UserController {
-	//@Autowired
-    private AppUserRepository repository; 
+
+    private final AppUserRepository repository; 
 	
 	//Constructor Injection
 	public UserController(AppUserRepository appUserReporitory) {
