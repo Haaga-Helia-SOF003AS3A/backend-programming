@@ -1,33 +1,25 @@
 package fi.haagahelia.demo.domain;
 
 public class Student {
-    private long id;
+    private Long id;
     private String firstName;
     private String lastName;
     
     public Student () {
-        this.id = 0;
-        this.firstName = null;
-        this.lastName = null;
     }
 
-    public Student (long id, String firstName, String lastName) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-    
+
     public Student (String firstName, String lastName) {
-        this.id = 0;
+        this.id = null;
         this.firstName = firstName;
         this.lastName = lastName;
     }
       
-    public long getId() {
+    public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

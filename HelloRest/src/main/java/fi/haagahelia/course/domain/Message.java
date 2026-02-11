@@ -1,10 +1,10 @@
 package fi.haagahelia.course.domain;
 
 public class Message {
-	private long id;
+	private Long id;
 	private String text;
 	
-	public Message(long id, String text) {
+	public Message(Long id, String text) {
 		super();
 		this.id = id;
 		this.text = text;
@@ -12,15 +12,15 @@ public class Message {
 	
 	public Message() {
 		super();
-		this.id = 0;
+		this.id = null;
 		this.text = null;
 	}
 	
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 	
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	
@@ -31,6 +31,5 @@ public class Message {
 	public void setText(String text) {
 		this.text = text;
 	}
-	
 	
 }
