@@ -11,9 +11,11 @@ import jakarta.persistence.OneToMany;
 
 @Entity
 public class Department {
+	
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
 	private Long departmentid;
+
 	private String name;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "department")

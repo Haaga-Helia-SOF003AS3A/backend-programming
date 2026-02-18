@@ -1,4 +1,4 @@
-package fi.haagahelia.course.web;
+package fi.haagahelia.course.service;
 
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,6 +14,7 @@ import fi.haagahelia.course.domain.AppUserRepository;
  **/
 @Service
 public class UserDetailServiceImpl implements UserDetailsService  {
+
 	private final AppUserRepository repository;
 
 	public UserDetailServiceImpl(AppUserRepository userRepository) {

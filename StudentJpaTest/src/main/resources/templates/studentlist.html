@@ -13,18 +13,24 @@
         <a th:text="${name}">Name: </a>
 
 	</div>
+
+	<!-- logout -->
 	<div class="col-md-4" style="padding:20px 0">
 		<form th:action="@{/logout}" method="post">
 			<input type="submit" value="Sign Out" class="btn btn-danger"/>
 		</form>
 	</div>
+
+	<!-- table -->
     <table class="table table-striped">
 		<tr>
 		    <th>Name</th>
 		    <th>Email</th>
 		    <th>Department</th>
-		    <th sec:authorize="hasRole('ADMIN')"> </th>
+		    <th sec:authorize="hasAuthority('ADMIN')"> </th>
 		</tr>  
+		
+		<!-- table rows for students-->
     	<tr th:each = "student : ${students}">
     		<td th:text="${student.firstName} + ' ' + ${student.lastName}"></td>
     		<td th:text="${student.email}"></td>
@@ -32,6 +38,6 @@
  			<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/delete/{id}(id=${student.id})}" class="btn btn-danger">Delete</a></td>    		
     	</tr>
      </table>
-	 <a href="/add" class="btn btn-success">Add Student</a>    	
+	 <p><a th:href="@{/add}" class="btn btn-success">Add Student</a></p>    	
 </body>
 </html>

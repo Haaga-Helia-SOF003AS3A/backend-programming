@@ -49,6 +49,16 @@
             "projectName": "StudentListOneToMany",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-StudentListApplication<StudentListTest>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "fi.haagahelia.course.StudentListApplication",
+            "projectName": "StudentListTest",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }

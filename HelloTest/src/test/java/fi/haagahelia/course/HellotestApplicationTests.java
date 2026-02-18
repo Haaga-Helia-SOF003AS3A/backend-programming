@@ -13,7 +13,7 @@ import fi.haagahelia.course.web.HelloController;
  * 
  * (inserted also context test, 26.9.24) 
  * 
- * @author h01270, updated by h01340 26.9.2024
+ * @author h01270, updated by h01340 
  *
  */
 
