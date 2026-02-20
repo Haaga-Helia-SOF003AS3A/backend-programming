@@ -6,6 +6,7 @@ import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
 import org.springframework.boot.jdbc.test.autoconfigure.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.junit.jupiter.api.Test;
@@ -17,6 +18,7 @@ import fi.haagahelia.course.domain.StudentRepository;
 
 
 //@DataJpaTest //if you are using in-memory database, like H2
+// OR
 @SpringBootTest(classes = StudentListApplication.class)
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE) //if you are using real db
 public class StudentRepositoryTest {
