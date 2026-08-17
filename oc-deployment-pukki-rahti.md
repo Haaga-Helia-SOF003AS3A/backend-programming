@@ -1,5 +1,7 @@
 # CSC services in Haaga-Helia – CLI version
 
+> Command syntax in this document has been verified against `oc` client 4.22 (OKD, matching Rahti 2's OpenShift 4.x) and `python-openstackclient` 10.2 with `python-troveclient` (August 2026). The Rahti API URL and the shared egress IP have been checked against docs.csc.fi. Cluster-side behavior should still be smoke-tested once against a real Rahti project.
+
 ## 1. First use
 
 Log in to MyCSC with your Haka account. The first login creates a CSC username.
@@ -613,11 +615,13 @@ read -s -p "Database password: " DB_PASSWORD
 echo
 ```
 
-The outward-facing address of Rahti services, allowed per the current HH and CSC guidelines:
+Rahti's shared outgoing (egress) IP address, which must be allowed per the current HH and CSC guidelines:
 
 ```text
 86.50.229.150/32
 ```
+
+**Note:** this egress IP is shared by *all* Rahti customers, so allowing it means any application running on Rahti can reach your database port. CSC therefore stresses using a strong, unique database username and password. CSC also notes the egress IP may change in the future, so do not treat it as permanent in course material.
 
 Create a PostgreSQL instance, for example:
 
