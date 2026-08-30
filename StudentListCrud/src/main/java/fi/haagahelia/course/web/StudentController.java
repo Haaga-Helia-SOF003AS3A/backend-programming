@@ -15,7 +15,6 @@ public class StudentController {
     // https://docs.spring.io/spring-framework/reference/core/beans/dependencies/factory-collaborators.html
     private final StudentRepository repository;
 
-    // constructor injection - works only if only one constructor
     public StudentController(StudentRepository repository) {
         this.repository = repository;
     }
