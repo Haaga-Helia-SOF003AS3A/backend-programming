@@ -18,6 +18,7 @@ import fi.haagahelia.course.domain.StudentRepository;
 public class StudentRestController {
 
 	private final StudentRepository studentRepository; 
+    
 	// Constructor Injection 
 	public StudentRestController(StudentRepository studentRepository) {
 		this.studentRepository = studentRepository;
@@ -36,7 +37,7 @@ public class StudentRestController {
 
     @PostMapping("/students")
     public Student saveStudent(@RequestBody Student student) {
-		System.out.println("saveStudent " + student);
+		// System.out.println("saveStudent " + student);
         return studentRepository.save(student);
     }
 

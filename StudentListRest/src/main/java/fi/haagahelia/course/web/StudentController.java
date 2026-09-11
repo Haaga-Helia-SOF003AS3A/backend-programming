@@ -15,14 +15,12 @@ import fi.haagahelia.course.domain.DepartmentRepository;
 import fi.haagahelia.course.domain.Student;
 import fi.haagahelia.course.domain.StudentRepository;
 
-@Controller
+@Controller  // MVC Controller
 public class StudentController {
 
-    // @Autowired
-    private StudentRepository studentRepository;
-
-    // @Autowired
-    private DepartmentRepository departmentRepository;
+    
+    private final StudentRepository studentRepository;
+    private final DepartmentRepository departmentRepository;
 
     // Constructor Injection instead of @Autowired annotation
     public StudentController(StudentRepository studentRepository,
@@ -59,24 +57,5 @@ public class StudentController {
         studentRepository.deleteById(studentId);
         return "redirect:../studentlist";
     }
-
-    // RESTful service to get all students
-	@RequestMapping(value="/allStudents", method = RequestMethod.GET)
-	public @ResponseBody List<Student> studentListRest() {	
-	        return (List<Student>) studentRepository.findAll();
-	}    
-
-	// RESTful service to get student by id
-	@RequestMapping(value="/allStudents/{id}", method = RequestMethod.GET)
-	public @ResponseBody Optional<Student> findStudentRest(@PathVariable("id") Long studentId) {
-        return studentRepository.findById(studentId);
-	}       
-	    
-	// RESTful service to save new student
-	@RequestMapping(value="/allStudents", method = RequestMethod.POST)
-	public @ResponseBody Student saveNewStudentRest(@RequestBody Student student) {
-        return studentRepository.save(student);
-	}    
-
 
 }
