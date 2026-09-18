@@ -22,6 +22,11 @@ public class UserController {
 	public UserController(AppUserRepository appUserReporitory) {
 		this.repository = appUserReporitory; 
 	}
+
+	@RequestMapping(value="/login")
+    public String login() {	
+        return "login";
+    }
 	
     @RequestMapping(value = "signup")
     public String addStudent(Model model){

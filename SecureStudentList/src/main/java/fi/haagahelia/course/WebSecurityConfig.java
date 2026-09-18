@@ -21,7 +21,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableMethodSecurity(securedEnabled = true)
 public class WebSecurityConfig {
 
-	// with lambda
+	
 	@Bean
 	public SecurityFilterChain configure(HttpSecurity http) throws Exception {
 		http
@@ -39,7 +39,7 @@ public class WebSecurityConfig {
 	@Bean
 	public UserDetailsService userDetailsService() {
 		
-		System.out.println("in-memory users - luodaan näitä kaksi kappaletta");
+		// System.out.println("in-memory users - luodaan näitä kaksi kappaletta");
 		List<UserDetails> users = new ArrayList<>();
 
 		PasswordEncoder passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();

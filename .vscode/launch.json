@@ -79,6 +79,47 @@
             "projectName": "StudentListRest",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-SecuritydemoApplication<securitydemo>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "fi.haagahelia.course.SecuritydemoApplication",
+            "projectName": "securitydemo",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=53179 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=securitydemo"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-StudentListApplication<StudentListSecured>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "fi.haagahelia.course.StudentListApplication",
+            "projectName": "StudentListSecured",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-StudentListApplication<StudentListSecureInMemoryUsers>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "fi.haagahelia.course.StudentListApplication",
+            "projectName": "StudentListSecureInMemoryUsers",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-StudentListSignUpApplication<StudentListSignUp>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "fi.haagahelia.course.StudentListSignUpApplication",
+            "projectName": "StudentListSignUp",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }

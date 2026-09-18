@@ -7,11 +7,10 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+
 
 import fi.haagahelia.course.domain.DepartmentRepository;
 import fi.haagahelia.course.domain.Student;
@@ -30,13 +29,7 @@ public class StudentController {
 			DepartmentRepository departmentRepository) {
 		this.studentRepository = studentRepository; 
 		this.departmentRepository = departmentRepository;
-	}
-	
-	// Show all students
-    @RequestMapping(value="/login")
-    public String login() {	
-        return "login";
-    }	
+	}	
 	
 	// Show all students
     @RequestMapping(value="/studentlist")
@@ -46,24 +39,6 @@ public class StudentController {
         return "studentlist";
     }
   
-	// RESTful service to get all students
-    @RequestMapping(value="/students")
-    public @ResponseBody List<Student> studentListRest() {	
-        return (List<Student>) studentRepository.findAll();
-    }    
-
-	// RESTful service to get student by id
-    @RequestMapping(value="/student/{id}", method = RequestMethod.GET)
-    public @ResponseBody Optional<Student> findStudentRest(@PathVariable("id") Long studentId) {	
-    	return studentRepository.findById(studentId);
-    }  
-    
-    // RESTful service to save a new student 
-    @PostMapping("/students")
-    public @ResponseBody Student saveStudent(@RequestBody Student student) {	
-    	return studentRepository.save(student);
-    } 
-    
     // Add new student
     @RequestMapping(value = "/add")
     public String addStudent(Model model){
