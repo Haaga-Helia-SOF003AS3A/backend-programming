@@ -17,6 +17,7 @@ import fi.haagahelia.course.domain.StudentRepository;
 
 @Controller  // MVC Controller
 public class StudentController {
+    /*
 
     
     private final StudentRepository studentRepository;
@@ -57,5 +58,5 @@ public class StudentController {
         studentRepository.deleteById(studentId);
         return "redirect:../studentlist";
     }
-
+ */
 }

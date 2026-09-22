@@ -13,9 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import fi.haagahelia.course.domain.Student;
 import fi.haagahelia.course.domain.StudentRepository;
-
+//john@john.com
 @RestController
 public class StudentRestController {
+    /*
 
 	private final StudentRepository studentRepository; 
     
@@ -55,6 +56,6 @@ public class StudentRestController {
     }
 
 
-	    
+	  */   
 	  
 }

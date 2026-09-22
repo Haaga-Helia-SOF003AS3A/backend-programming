@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Customers</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<body style="padding-left: 40px;">
+    <h1>Customers</h1>
+<form action="#" th:action="@{/customerform}" th:object="${customer}" method="post">
+    <table class="table table-striped">
+  <tr>
+    
+   <th>Name</th>
+   <th>Email</th>
+  </tr>
+     <tr th:each = "customer : ${customers}">
+       
+       <td th:text="${customer.name}"></td>
+       <td th:text="${customer.email}"></td>
+     </tr>
+</table>
+<p><input class="btn btn-success" type="submit" value="Add Book" /></p>
+</form>
+</body>
+</html>
