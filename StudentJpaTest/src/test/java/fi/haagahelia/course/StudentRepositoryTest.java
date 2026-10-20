@@ -45,6 +45,21 @@ public class StudentRepositoryTest {
     }
 
     @Test
+    public void updateStudent() {
+        List<Student> students = repository.findByLastName("Johnson");
+        Student student = students.get(0);
+        student.setLastName("Jackson");
+        student.setEmail("john@jackson.com");
+        repository.save(student);
+
+        assertThat(repository.findByLastName("Johnson")).hasSize(0);
+        List<Student> updatedStudents = repository.findByLastName("Jackson");
+        assertThat(updatedStudents).hasSize(1);
+        assertThat(updatedStudents.get(0).getId()).isEqualTo(student.getId());
+        assertThat(updatedStudents.get(0).getEmail()).isEqualTo("john@jackson.com");
+    }
+
+    @Test
     public void deleteNewStudent() {
         List<Student> students = repository.findByLastName("Johnson");
         Student student = students.get(0);
