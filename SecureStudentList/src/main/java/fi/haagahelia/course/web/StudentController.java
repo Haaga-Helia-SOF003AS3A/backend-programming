@@ -1,6 +1,7 @@
 package fi.haagahelia.course.web;
 
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -49,7 +50,7 @@ public class StudentController {
 
     // Delete student
     // Demo here how to use @PreAuthorize annotation
-    //@PreAuthorize("hasAuthority('ADMIN')") 
+    @PreAuthorize("hasAuthority('ADMIN')") 
     // a) try to delete student  (with USER ROLE)
     // b) @PreAuthorize delete only for ADMIN ROLE
     // c) try to delete student again  (with USER ROLE)

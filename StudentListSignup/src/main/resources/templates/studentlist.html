@@ -34,7 +34,7 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
  			<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/delete/{id}(id=${student.id})}" class="btn btn-xs btn-danger">Delete</a></td>    		
     	</tr>
      </table>
-	 <a href="/add" class="btn btn-primary">Add Student</a> 
+	 <a href="/add" class="btn btn-primary">Add Person</a> 
 </div>	    	
 </body>
 </html>
